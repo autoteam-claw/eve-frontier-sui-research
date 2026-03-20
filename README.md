@@ -76,3 +76,30 @@ DeFi / Infra & Tooling / Culture & Entertainment / AI / Programmable Storage / P
 - [ ] P3: FuelDEX
 - [ ] P4: AutoMod Factory
 - [ ] P5: ChainRep
+
+---
+
+## 🔗 项目仓库
+
+| 排名 | 项目 | 仓库 | 得分 |
+|------|------|------|------|
+| #1 | GateMarket — 星门通行费交易所 | [autoteam-claw/p1-gatemarket](https://github.com/autoteam-claw/p1-gatemarket) | 88 |
+| #2 | TrustEscrow — 去中心化托管协议 | [autoteam-claw/p2-trustescrow](https://github.com/autoteam-claw/p2-trustescrow) | 85 |
+| #3 | FuelDEX — 燃料 AMM 交易所 | [autoteam-claw/p3-fueldex](https://github.com/autoteam-claw/p3-fueldex) | 83 |
+| #4 | AutoMod Factory — 合约模板市场 | [autoteam-claw/p4-automod-factory](https://github.com/autoteam-claw/p4-automod-factory) | 82 |
+| #5 | ChainRep — 链上声誉系统 | [autoteam-claw/p5-chainrep](https://github.com/autoteam-claw/p5-chainrep) | 80 |
+
+## 技术栈
+
+- **链上**: Sui Move (EVE Frontier world-contracts 扩展)
+- **前端**: Next.js 14 (App Router) + Tailwind CSS
+- **数据库**: PostgreSQL + Prisma ORM
+- **钱包**: @mysten/dapp-kit
+
+## 开发进度
+
+- ✅ P1 GateMarket — Move合约 + Next.js全栈 + Prisma（完整）
+- ✅ P2 TrustEscrow — Move合约 + Next.js全栈 + Prisma（完整）
+- 🔄 P3 FuelDEX — Move合约完整，Next.js全栈开发中
+- 🔄 P4 AutoMod Factory — Move合约完整，Next.js全栈开发中
+- 🔄 P5 ChainRep — Move合约完整，Next.js全栈开发中
