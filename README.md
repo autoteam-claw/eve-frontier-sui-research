@@ -43,9 +43,32 @@ EVE Frontier 是基于 Sui 区块链的新一代沙盒游戏，三类可编程 S
 - 数据 API 平台 ✅
 - 星门通行费协议 ✅
 
-### DeepSurge 黑客松赛道
+### DeepSurge 黑客松
 
-DeFi · Infra & Tooling · Culture & Entertainment · AI · Programmable Storage · Payments & Wallets · Explorations · Cryptography · Degen
+**时间**：2026.3.11–3.31 | **奖池**：$80,000 | **主题**："A Toolkit for Civilization"
+
+**奖项分布**：
+
+| 奖项 | 金额 |
+|------|------|
+| Overall 1st | $15,000 |
+| Overall 2nd | $7,500 |
+| Overall 3rd | $5,000 |
+| 赛道冠军 ×5 | $5,000 each |
+
+**5 个评审赛道**：
+
+| 赛道 | 评审标准 |
+|------|---------|
+| **Utility** | 实质性改变玩家生存/协作/探索/竞争方式的 Mod |
+| **Technical Implementation** | 架构优雅、巧妙使用 Frontier 系统、可扩展性、健壮性 |
+| **Creative/Innovation** | 新颖创意、巧妙重构、大胆的系统概念，有 Frontier 独特感 |
+| **Weirdest Idea** | 视觉震撼、出人意料、meme 级创意 |
+| **Live Frontier Integration** | 部署在 Stillness 真实服务器，与真实玩家互动 |
+
+**评审流程**：社区投票（4.1–4.15 玩家实际体验并投票）+ 功能评估 → 4.24 公布结果
+
+**关键规则**：一个项目可参与多个赛道评选，但最多只能赢一个赛道奖
 
 ### Sui 差异化能力（vs EVM）
 
@@ -478,20 +501,186 @@ DeFi · Infra & Tooling · Culture & Entertainment · AI · Programmable Storage
 
 ---
 
-## Phase 5：战略总结
+## 黑客松形态分类
 
-### ① Top 3 必做项目
+详见 **[HACKATHON-STRATEGY.md](./HACKATHON-STRATEGY.md)** — 20 个项目按三种参赛形态（Assembly 合约 / 游戏内 dApp / 外部工具）分为 A~E 五类，含评委偏好分析和策略建议。
 
-**#1 GateMarket**（首选）
-占据星门流量节点——这是整个宇宙的交通命脉，每个玩家无法绕过。先发者建立协议标准后护城河极深。Demo 最直观，评委秒懂。
+---
 
-**#2 TrustEscrow**（必做）
-解决玩家大额交易最真实痛点，有 TrustLocker 参赛草案证明需求真实存在——但对方只有草案，我们做完整实现。2 周内 Solo 可完成，获奖概率高。
+## Phase 5：按评审赛道排名（每个项目只归属一个赛道）
 
-**#3 FrontierAgent + AI 赛道**（弯道超车）
-DeepSurge 有专门的 AI 赛道，而其他参赛者几乎都在做 DeFi/工具。AI 代理自动管理 Network Node 既解决真实痛点，又天然击中 AI 赛道评委偏好。
+> **分配原则**：每个项目分配到它获奖概率最高的唯一赛道，避免赛道内耗。
+>
+> 排名依据 = 获奖概率(50%) + 实现容易度(50%)
+>
+> 实现容易度评级：10=已完成 · 8-9=1-3 天可做 · 6-7=5-7 天 · 4-5=7-14 天 · 2-3=>14 天或技术风险高
 
-### ② 最佳组合套件（5 项目共享代码）
+### 20 项目赛道分配总览
+
+| 赛道 | 分配项目 | 数量 |
+|------|---------|------|
+| **Utility** | GateMarket, TrustEscrow, FuelDEX, StorageMarket, FrontierInsurance, SpaceYield, FrontierLend | 7 |
+| **Technical** | AutoMod Factory, ChainRep, FrontierOracle, frontier-flow++, FrontierData | 5 |
+| **Creative** | FrontierAgent, FrontierChat, AccessPass, FuelHedge | 4 |
+| **Weirdest** | KillMint, ReputationBounty, AllianceIndex | 3 |
+| **Live Integration** | TribalVault | 1 |
+
+> 说明：Live Integration 赛道只分配 1 个"专属"项目，因为已分配到其他赛道的 GateMarket(Utility)、TrustEscrow(Utility)、StorageMarket(Utility) 本身也在 Live 赛道极具竞争力。黑客松规则允许一个项目参与多赛道评选（只能赢一个），所以 Live 赛道实际竞争力由已完成的 A/B 类项目覆盖。
+
+---
+
+### 赛道一：Utility（实用性）— 7 个项目
+
+> 评审标准：**实质性改变玩家生存、协作、探索或竞争方式的 Mod**
+
+| 排名 | 项目 | 获奖概率 | 实现容易度 | 综合分 | 形态 | 开发状态 | 判断理由 |
+|------|------|---------|-----------|-------|------|---------|---------|
+| 1 | **GateMarket** | 9 | 10 | **9.5** | A 类 | ✅ 已完成 | 每个玩家每次跳星门都被动接触，触达率 100%，对交通体验的改变是结构性的 |
+| 2 | **TrustEscrow** | 8 | 10 | **9.0** | B 类 | ✅ 已完成 | 大额交易痛点真实存在（TrustLocker 草案验证），已完成可直接提交 |
+| 3 | **StorageMarket** | 7 | 8 | **7.5** | A 类 | 未开始 | A 类形态绑定 SSU，合约简单（租赁+自动收租），改变仓储使用方式 |
+| 4 | **FuelDEX** | 8 | 6 | **7.0** | B 类 | 合约完成 | 燃料是生存必需品，但 AMM 前端+流动性引导有工作量 |
+| 5 | **FrontierInsurance** | 6 | 4 | **5.0** | B 类 | 未开始 | 概念实用（PvP 损失赔付），但精算模型复杂，14 天极难出可体验 MVP |
+| 6 | **SpaceYield** | 5 | 5 | **5.0** | B 类 | 未开始 | 被动收益对 DeFi 玩家实用，但普通玩家无感+冷启动需双边流动性 |
+| 7 | **FrontierLend** | 4 | 4 | **4.0** | B 类 | 未开始 | 借贷对玩家有用，但清算机制复杂+开发量大，14 天难完成 |
+
+> **赛道冠军预测**：GateMarket（综合分 9.5，碾压优势）
+>
+> **赛道策略**：GateMarket 已完成，直接提交。TrustEscrow 作为备选也已完成。本赛道最强。
+
+---
+
+### 赛道二：Technical Implementation（技术实现）— 5 个项目
+
+> 评审标准：**架构优雅、巧妙使用 Frontier 系统、可扩展性、健壮性**
+
+| 排名 | 项目 | 获奖概率 | 实现容易度 | 综合分 | Sui 技术亮点 | 开发状态 | 判断理由 |
+|------|------|---------|-----------|-------|-------------|---------|---------|
+| 1 | **AutoMod Factory** | 9 | 7 | **8.0** | TemplateRegistry + Dynamic Fields 参数化 + Walrus 模板存储 | 合约完成 | Move 设计模式教科书——动态字段参数化是 Sui 独有 showcase |
+| 2 | **ChainRep** | 8 | 7 | **7.5** | SoulBound Token + Seal 门控 + ScoreKeeper 权限 + 跨合约组合 | 合约完成 | SBT + Seal 组合在游戏场景无先例，跨合约可组合性是最佳技术叙事 |
+| 3 | **FrontierOracle** | 7 | 7 | **7.0** | OracleRegistry Object + 权限管理 + Walrus 历史序列 | 未开始 | 链上原语设计纯净，被其他合约 borrow 调用——Move 可组合性典范 |
+| 4 | **frontier-flow++** | 7 | 5 | **6.0** | 可视化 → Move 代码生成 + AST 解析 | 未开始 | 做到真正生成可编译 Move 代码则技术印象极高，但实现难度大 |
+| 5 | **FrontierData** | 4 | 8 | **6.0** | Walrus 历史存储 + Sui Pay 链上订阅 + zkLogin 注册 | 未开始 | 核心是链下索引+REST API，Sui 集成深度不够，但开发快 |
+
+> **赛道冠军预测**：AutoMod Factory（综合分 8.0）
+>
+> **赛道策略**：AutoMod Factory 合约已完成，需补全前端。ChainRep 合约也已完成，两者可同时推进。
+
+---
+
+### 赛道三：Creative/Innovation（创意/创新）— 4 个项目
+
+> 评审标准：**新颖创意、巧妙重构、大胆的系统概念，有 Frontier 独特感**
+
+| 排名 | 项目 | 获奖概率 | 实现容易度 | 综合分 | 创意核心 | 开发状态 | 判断理由 |
+|------|------|---------|-----------|-------|---------|---------|---------|
+| 1 | **FrontierAgent** | 9 | 6 | **7.5** | AI 代理自动管理宇宙基础设施 | 未开始 | 创意分最高——"AI 帮你管太空"概念前所未有，但需要做出来才算 |
+| 2 | **FrontierChat** | 7 | 6 | **6.5** | Seal 加密+声誉门控的太空密谋频道 | 未开始 | "只有特定声誉才能进入的加密频道"——Frontier 独特感强 |
+| 3 | **AccessPass** | 6 | 7 | **6.5** | Google/Apple 一键登录进入太空游戏 | 未开始 | Web2→Web3 无摩擦桥接+zkLogin 是 Sui 独有，有创新价值 |
+| 4 | **FuelHedge** | 8 | 3 | **5.5** | 太空华尔街——游戏内燃料衍生品交易 | 未开始 | 概念最大胆之一，但实现难度致命，14 天几乎不可能完成 |
+
+> **赛道冠军预测**：FrontierAgent（综合分 7.5）
+>
+> **赛道策略**：FrontierAgent 概念碾压但需要从零开发。如果时间不够，AccessPass 是更保险的选择（zkLogin 集成有官方文档支持）。
+
+---
+
+### 赛道四：Weirdest Idea（最怪创意）— 3 个项目
+
+> 评审标准：**视觉震撼、出人意料、meme 级创意**
+
+| 排名 | 项目 | 获奖概率 | 实现容易度 | 综合分 | "怪"在哪 | 开发状态 | 判断理由 |
+|------|------|---------|-----------|-------|---------|---------|---------|
+| 1 | **KillMint** | 9 | 9 | **9.0** | 杀人自动生成 NFT 战利品，挂在空间站展示 | 未开始 | meme 属性最强+开发 1-2 天+视觉效果好做。整份报告 ROI 最高的新项目 |
+| 2 | **ReputationBounty** | 7 | 7 | **7.0** | 星门上贴"悬赏通缉令"，赏金猎人链上文化 | 未开始 | 画面感极强——飞到星门看到自己的通缉海报。A 类形态加分 |
+| 3 | **AllianceIndex** | 5 | 9 | **7.0** | "太空福布斯富豪榜"+宇宙权力排名 | 未开始 | meme 传播力有+开发极简，但实现太平淡缺少"视觉震撼" |
+
+> **赛道冠军预测**：KillMint（综合分 9.0）
+>
+> **赛道策略**：KillMint 是整份报告中 ROI 最高的未开发项目——1-2 天开发，meme 传播性强，$5K 到手概率极高。**必须做。**
+
+---
+
+### 赛道五：Live Frontier Integration（实际部署集成）— 1 个专属项目
+
+> 评审标准：**部署在 Stillness 真实服务器，与真实玩家互动**
+>
+> 核心问题：4.1–4.15 社区投票期，玩家能不能无摩擦地用你的东西？
+
+| 排名 | 项目 | 获奖概率 | 实现容易度 | 综合分 | 形态 | 开发状态 | 判断理由 |
+|------|------|---------|-----------|-------|------|---------|---------|
+| 1 | **TribalVault** | 6 | 7 | **6.5** | B 类 | 未开始 | 多签金库挂载 SSU，合约逻辑清晰（多签+按贡献度分配），可快速完成并部署 |
+
+> **赛道说明**：Live 赛道的真正竞争力来自已分配到其他赛道但同样会部署上线的项目：
+>
+> | 来自其他赛道 | 形态 | 状态 | Live 竞争力 |
+> |-------------|------|------|-----------|
+> | GateMarket（← Utility） | A 类 | ✅ 已完成 | **极强**——Assembly Hook，过星门即触发 |
+> | TrustEscrow（← Utility） | B 类 | ✅ 已完成 | **强**——挂载 SSU，按 F 键可用 |
+> | StorageMarket（← Utility） | A 类 | 未开始 | **强**——直接绑定 SSU |
+> | KillMint（← Weirdest） | D 类 | 未开始 | **中**——挂载 Turret 展示 |
+>
+> 如果 GateMarket 赢了 Utility，它自然也是 Live 赛道的最强候选。
+
+---
+
+### Overall 冠军概率分析
+
+Overall 不是赛道分数加权——核心是**社区投票**（4.1–4.15 玩家在 Stillness 实际体验后投票）。
+
+决定 Overall 的四个变量：
+
+| 变量 | 说明 |
+|------|------|
+| **玩家触达率** | 多少玩家在投票期**被动接触到**你的项目 |
+| **体验记忆点** | 用完后是否"记得住"并愿意投票 |
+| **跨赛道强度** | 在多个维度都"不差" |
+| **技术完成度** | 功能评估时能跑起来不 crash |
+
+**Overall 胜率排名**：
+
+| 项目 | 归属赛道 | 触达率 | 记忆点 | 跨赛道 | 完成度 | Overall 胜率 |
+|------|---------|--------|--------|--------|--------|-------------|
+| **GateMarket** | Utility | **10** | 8 | 9 | **10** | **≈35%** |
+| KillMint | Weirdest | 7 | **10** | 6 | 待开发 | ≈15% |
+| TrustEscrow | Utility | 5 | 7 | 7 | **10** | ≈10% |
+| AutoMod Factory | Technical | 4 | 6 | 7 | 部分 | ≈5% |
+| FrontierAgent | Creative | 3 | 8 | 5 | 未开始 | ≈5% |
+
+**GateMarket 获 Overall 概率最高的四个结构性原因**：
+
+1. **被动触达率 100%**：玩家跳星门是最基本动作，通行费协议拦在必经之路上，玩家不需要知道你的项目也会用到它
+2. **跨赛道全覆盖**：归属 Utility，但同时在 Live（9.5）、Technical（9.0）、Creative（8.5）都极强
+3. **已完成**：Move 合约 + Next.js 全栈均已完成，社区投票期不会因 bug 丢分
+4. **90 秒 Demo 零解释成本**：设通行费 → 玩家付费 → 链上结算 → 星门跳转，看一眼就懂
+
+> **GateMarket 获 Overall 1st 概率 ≈ 35%，获 Overall 前三概率 ≈ 55%。**
+
+---
+
+## Phase 6：战略总结
+
+### ① 最优参赛策略：每赛道派一个冠军选手
+
+| 赛道 | 派出项目 | ROI | 状态 | 获奖期望值 |
+|------|---------|-----|------|-----------|
+| **Utility** | GateMarket | 95 | ✅ 已完成 | $5,000 × 90% = $4,500 |
+| **Technical** | AutoMod Factory | 92 | 合约完成 | $5,000 × 80% = $4,000 |
+| **Creative** | FrontierAgent | 92 | 未开始 | $5,000 × 70% = $3,500 |
+| **Weirdest** | KillMint | 95 | 未开始 | $5,000 × 75% = $3,750 |
+| **Live Integration** | StorageMarket | 85 | 未开始 | $5,000 × 60% = $3,000 |
+| **Overall 1st** | GateMarket | — | ✅ 已完成 | $15,000 × 35% = $5,250 |
+
+**总期望收益**：保守估计 $12,000–18,000（考虑一个项目只能赢一个赛道奖的约束）
+
+### ② 立即行动优先级
+
+1. **GateMarket** → 已完成，立即部署到 Stillness（锁定 Utility + Overall）
+2. **KillMint** → 1-2 天开发，ROI 最高的新项目（锁定 Weirdest）
+3. **AutoMod Factory** → 补全前端（锁定 Technical）
+4. **StorageMarket** → 开发量小，A 类形态（锁定 Live Integration）
+5. **FrontierAgent** → 如有余力，冲 Creative（AI 差异化大）
+
+### ③ 最佳组合套件（5 项目共享代码）
 
 推荐组合：**GateMarket + TrustEscrow + ChainRep + FrontierOracle + FrontierData**
 
@@ -515,7 +704,7 @@ packages/
 - TrustEscrow + ChainRep → 高声誉享受更低托管费
 - FrontierData API → 对外变现整套基础设施数据
 
-### ③ 最快赚到第一笔钱的路径
+### ④ 最快赚到第一笔钱的路径
 
 **第 1 天**：KillMint 上线，每笔 Mint 0.05 SUI，社区免费宣传
 
@@ -523,7 +712,7 @@ packages/
 
 **第 7-14 天**：GateMarket Beta，早鸟 0.1% 费率，建立使用数据 → 黑客松 Demo 更有说服力
 
-### ④ 生态控制地图
+### ⑤ 生态控制地图
 
 ```
 EVE Frontier 经济价值流转
